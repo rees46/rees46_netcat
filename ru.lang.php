@@ -1,0 +1,3 @@
+<?php
+define("NETCAT_MODULE_REES46", "REES46");
+define("NETCAT_MODULE_REES46_DESCRIPTION", "REES46 Description");
