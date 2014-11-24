@@ -6,6 +6,7 @@
 
 * Скачиваем с репозитория архив `rees46.tgz`
 * Заходим в Админ-панель Netcat: Инструменты -> Установка модуля
+* Открываем настройки модуля и вбиваем в поле `SHOP_ID=<KEY>` ключ магазина в rees46.
 
 Установка для демоверсии
 ------------------------
@@ -13,7 +14,7 @@
 * Скачиваем с репозитория архив `rees46.tgz`
 * Распаковываем содержимое архива в директорию `/netcat/modules/rees46`
 * Переносим все файлы из папки `/netcat/modules/rees46/netcat/modules/rees46` в `/netcat/modules/rees46`. Пустые папки можно удалить.
-* Создаем строку в таблице Modules. В поле `SHOP_ID=<KEY>` заменяем сразу на ключ магазина в rees46.
+* Создаем строку в таблице Modules. В поле `SHOP_ID=<KEY>\nSHOP_SECRET=<SECRET>` заменяем сразу на ключ магазина в rees46.
 
 		insert into Module ( Parameters, Inside_Admin, Checked, Module_Name, Keyword, Installed, Description) values ( 'SHOP_ID=<KEY>', '1', '1', 'NETCAT_MODULE_REES46', 'rees46', '1', 'NETCAT_MODULE_REES46_DESCRIPTION')
 	

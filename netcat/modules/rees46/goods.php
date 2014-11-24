@@ -2,7 +2,7 @@
 error_reporting(E_ALL ^ E_NOTICE);
 ini_set("display_errors", 1);
 
-$NETCAT_FOLDER = join(strstr(__FILE__, "/") ? "/" : "\\", array_slice(preg_split("/[\/\\\]+/", __FILE__), 0, -4)).( strstr(__FILE__, "/") ? "/" : "\\" );
+$NETCAT_FOLDER = realpath('./../../../') . "/";
 include_once ($NETCAT_FOLDER."vars.inc.php");
 require_once ($INCLUDE_FOLDER."index.php");
 
@@ -22,7 +22,10 @@ if (is_array($items)) {
 		list($component_id, $item_id) = explode(":", $item);
 		$item = nc_netshop_item::by_id($component_id, $item_id);
 
-		if (!$item || !$item['Sub_Class_ID']) {
+		if (!$item || !$item['Sub_Class_ID'] || !$item['Checked']) {
+			?>
+			<script>jQuery.get('http://api.rees46.com/import/disable?shop_id=<?= $MODULE_VARS['rees46']['SHOP_ID'] ?>&shop_secret=<?= $MODULE_VARS['rees46']['SHOP_SECRET'] ?>&item_ids=<?= $component_id . ":" . $item_id ?>')</script>
+			<?
 			continue;
 		}
 		?>

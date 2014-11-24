@@ -1,6 +1,5 @@
 <?
 #$sub = 123;
-echo 11111;exit;
 ob_start();
 
 $NETCAT_FOLDER = join( strstr(__FILE__, "/") ? "/" : "\\", array_slice( preg_split("/[\/\\\]+/", __FILE__), 0, -4 ) ).( strstr(__FILE__, "/") ? "/" : "\\" );
