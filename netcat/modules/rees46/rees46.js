@@ -7,7 +7,8 @@ function rees46_callback() {
 		$.ajax({
 			url: '/netcat/modules/rees46/goods.php',
 			data: {
-				items: r
+				items: r,
+				recommended_by: 'popular'
 			},
 			success: function(r) {
 				$('#rees46_recomended').append(r);

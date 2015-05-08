@@ -3,7 +3,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 ini_set("display_errors", 1);
 
 $NETCAT_FOLDER = realpath('./../../../') . "/";
-include_once ($NETCAT_FOLDER."vars.inc.php");
+include_once ($NETCAT_FOLDER."vars.inc.php");echo realpath('.');exit;
 require_once ($INCLUDE_FOLDER."index.php");
 
 $input = nc_core('input');
@@ -33,7 +33,7 @@ if (is_array($items)) {
 		<div class="tpl-block-swiper-item" style="width: 290px;">
 			<!-- Карточка-->
 			<div class=" tpl-block-cardbox tpl-block-cardbox--mini">
-				<a class="tpl-block-cardbox-link" href="<?= nc_message_link($item['Message_ID'], $item['Class_ID']); ?>">
+				<a class="tpl-block-cardbox-link" href="<?= nc_message_link($item['Message_ID'], $item['Class_ID']); ?>?recommended_by=<?= $_GET['recommended_by'] ?>">
 					<!-- Заголовок-->
 					<div class="tpl-block-title tpl-block-title--size_ml">
 						<div class="tpl-field-title">
