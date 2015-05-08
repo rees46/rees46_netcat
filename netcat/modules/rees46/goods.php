@@ -3,7 +3,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 ini_set("display_errors", 1);
 
 $NETCAT_FOLDER = realpath('./../../../') . "/";
-include_once ($NETCAT_FOLDER."vars.inc.php");echo realpath('.');exit;
+include_once ($NETCAT_FOLDER."vars.inc.php");
 require_once ($INCLUDE_FOLDER."index.php");
 
 $input = nc_core('input');
